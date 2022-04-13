@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users CR</title>
+</head>
+<body>
+    <h1>ALL Users</h1>
+    <table>
+        <tr>
+            {% for attr in users[0].__dict__.keys() %}
+                <th>{{ attr }}</th>
+            {% endfor %}
+        </tr>
+        {% for user in users %}
+            <tr>
+                {% for attr in user.__dict__.values() %}
+                    <td>{{ attr }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </table>
+    <a href="/create">Add a New User</a>
+</body>
+</html>
